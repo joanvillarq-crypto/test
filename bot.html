@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Show Fetcher</title>
+    <style>
+        #loader {
+            display: none;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>TV Show Fetcher</h1>
+    <input type="text" id="tmdbId" placeholder="Enter TMDB ID (e.g., 66732)" />
+    <button id="fetchButton">Fetch TV Show</button>
+    <div id="loader">Loading...</div>
+    <pre id="result"></pre>
+    <button id="downloadButton" style="display: none;">Download Data</button>
+
+    <script>
+        const apiKey = 'cbcdfc6593aae506b023e64d7df48dc7';
+        let fetchedData = null; // Store fetched data here
+
+        async function fetchData(url) {
+            const response = await fetch(url);
+            return response.ok ? response.json() : null;
+        }
+
+        async function fetchTvShowData(tmdbId) {
+            const url = `https://api.themoviedb.org/3/tv/${tmdbId}?api_key=${apiKey}&append_to_response=seasons`;
+            return await fetchData(url);
+        }
+
+        async function fetchEpisodesForSeason(tmdbId, seasonNumber) {
+            const url = `https://api.themoviedb.org/3/tv/${tmdbId}/season/${seasonNumber}?api_key=${apiKey}`;
+            return await fetchData(url);
+        }
+
+        async function getAllTvShowDetails(tmdbId) {
+            const showData = await fetchTvShowData(tmdbId);
+            if (!showData) return null;
+
+            const tvShowDetails = {
+                tmdb_id: showData.id,
+                title: showData.name,
+                poster: `https://image.tmdb.org/t/p/w300${showData.poster_path || ''}`,
+                seasons: [],
+            };
+
+            // Check if seasons exist before accessing
+            if (Array.isArray(showData.seasons)) {
+                for (const season of showData.seasons) {
+                    const seasonDetails = {
+                        season_number: season.season_number,
+                        season_poster: `https://image.tmdb.org/t/p/w300${season.poster_path || ''}`,
+                        episodes: [] // Initialize episodes array
+                    };
+
+                    // Fetch episodes details for this season
+                    const seasonEpisodes = await fetchEpisodesForSeason(tmdbId, season.season_number);
+                    if (seasonEpisodes && seasonEpisodes.episodes && Array.isArray(seasonEpisodes.episodes)) {
+                        for (const episode of seasonEpisodes.episodes) {
+                            seasonDetails.episodes.push({
+                                episode_number: episode.episode_number,
+                                episode_name: episode.name,
+                                episode_poster: `https://image.tmdb.org/t/p/w300${episode.still_path || ''}`,
+                            });
+                        }
+                    }
+                    
+                    tvShowDetails.seasons.push(seasonDetails);
+                }
+            }
+
+            return tvShowDetails;
+        }
+
+        function downloadJSON(data, filename) {
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        document.getElementById('fetchButton').addEventListener('click', async () => {
+            const tmdbId = document.getElementById('tmdbId').value;
+            const resultArea = document.getElementById('result');
+            const loader = document.getElementById('loader');
+            const downloadButton = document.getElementById('downloadButton');
+
+            // Show loading indicator
+            loader.style.display = 'block';
+            resultArea.textContent = '';
+            downloadButton.style.display = 'none'; // Hide download button initially
+
+            try {
+                fetchedData = await getAllTvShowDetails(tmdbId); // Store fetched data
+
+                if (fetchedData) {
+                    // Display the results
+                    resultArea.textContent = JSON.stringify(fetchedData, null, 2);
+                    downloadButton.style.display = 'block'; // Show download button
+                } else {
+                    resultArea.textContent = 'No data found';
+                }
+            } catch (error) {
+                resultArea.textContent = 'An error occurred: ' + error.message;
+            } finally {
+                loader.style.display = 'none'; // Hide loading indicator
+            }
+        });
+
+        document.getElementById('downloadButton').addEventListener('click', () => {
+            if (fetchedData) {
+                downloadJSON(fetchedData, 'tv_show_details.json');
+            }
+        });
+    </script>
+</body>
+</html>

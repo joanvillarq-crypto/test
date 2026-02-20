@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Series Details | FlixSIGHT </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/D moviesand tv show.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+<link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+<link rel="stylesheet" href="movieServer.css">
+<script src="https://public.codepenassets.com/js/prefixfree-1.0.7.min.js"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'><link rel="stylesheet" href="share/share.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9611294566608435"
+     crossorigin="anonymous"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4VTM2TD');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGV1DJ3KS3"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EGV1DJ3KS3'); </script>
+    <style>
+        /* Add some basic styling */
+        
+        #video-player {
+            margin-bottom: 20px;
+            border: none;
+            padding: 0px;
+        }
+        #video-caption {
+            font-weight: bold;
+            margin: 10px 0;
+            display: none;
+        }
+        .season, .episode {
+            flex: 0 0 auto; /* Prevent shrinking */
+            margin-right: 10px; /* Space between items */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 25px;
+            min-width: 170px; /* Minimum width for each item */
+            max-width: 170px; /* Maximum width for each item */
+            text-align: center; /* Center text */
+            color: white; /* Text color for better visibility */
+            background-size: cover; /* Cover the button area with the background */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+            white-space: nowrap; /* Prevent text wrapping */
+        } .season { background-color: royalblue; }
+        .slider {
+            display: flex;
+            overflow-x: auto; /* Horizontal scrolling */
+            padding: 10px 0; /* Padding for the slider */
+            white-space: nowrap; /* Prevent line breaks */
+        }
+        .slider::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+    </style>
+</head>
+<body class="body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4VTM2TD"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <main class="main">
+        <div class=" overlay overlay2"></div>
+        <div class="overlay_side_navabar"></div>
+        <div class="sidenav_container_movieDetail">
+            <div class="sidenav_child_container">
+                <nav class="sidenav sidenav_2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#ffff"
+                        class="arrow_left bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                    </svg>
+                    <h3 class="title">FLIXSIGHT</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor"
+                        class="hamburger bi-list" viewBox="0 0 16 16">
+                        <path class="pathh pathhphone" fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <div class="menu">
+                        <h4 class="menu_title">Menu</h4>
+                        <ul class="menu_ul">
+                            <li class="home">
+                                <a class="sidenavlinks" href="/"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="22" height="22" fill="currentColor" class="bi bi-house-fill"
+                                        viewBox="0 0 16 16">
+                                        <path class="path" fill-rule="evenodd"
+                                            d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                        <path class="path" fill-rule="evenodd"
+                                            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                    </svg><span class="Home_title title_span">Home</span></a>
+                            </li>
+                            <li class="movie">
+                                <a class="sidenavlinks" href="./moviesGenre.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-play-fill" viewBox="0 0 16 16">
+                                        <path class="path"
+                                            d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                    </svg>
+                                    <span class="movie_name title_span">Movies</span></a>
+                            </li>
+                            <li class="tv_shows">
+                                <a class="sidenavlinks" href="./tvShows.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-tv-fill" viewBox="0 0 16 16">
+                                        <path class="path"
+                                            d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM2 2h12s2 0 2 2v6s0 2-2 2H2s-2 0-2-2V4s0-2 2-2z" />
+                                    </svg>
+                                    <span class="tv_shows_title title_span">Shows</span></a>
+                            </li>
+                            <li class="settings">
+                                <a class="sidenavlinks" href="./About.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                        class="bi bi-info-square-fill" viewBox="0 0 16 16">
+                                        <path class="path"
+                                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.93 4.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                    </svg><span class="settings_title title_span">About</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <section class="section_one section_one_movieDetail">
+            <div class="nav_paremt_conatainer movieDetailnav_paremt_conatainer">
+                <nav class="navContainer movieDetailnavContainer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="currentColor"
+                        class="hamburger hamburgerphone bi-list" viewBox="0 0 16 16">
+                        <path class="pathh" fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <input class="search" type="text" placeholder="Search ">
+                    <div class="light_darkmode"></div>
+                </nav>
+            </div>
+            <section class="section_two section_two2">
+                <div class="posterbig"></div>
+                <div class="poster_big">
+                    <div class="gradient"></div>
+                    <div class="line"></div>
+                </div>
+                <section class="movie_details">
+hi
+                </section>
+                <section class="sectio@n_story">
+<div id="tv-show-details">
+        <div class="slider" id="season-slider"></div>
+        <div class="slider" id="episode-slider" style="display:none;"></div>
+         </div>
+                </section>
+              <section class="section_story" style="display:none;">
+              </section>
+                <section class="Trailer_section">
+
+                </section>
+                <section
+                    class=" Now_playing_movies_container Now_playing_movies_container_movieDetail movie_caste_container "
+                    id="cast_con">
+                    <h4 class="Now_playing_movies_container_title">Cast</h4>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="leftarrow arrowbtn bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="rightarrow arrowbtn bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    <div class="Casdiv">
+                    </div>
+                </section>
+
+                <section
+                    class=" Now_playing_movies_container Now_playing_movies_container_movieDetail similar_movies_container"
+                    id="Similarovie">
+                    <h4 class="Now_playing_movies_container_title">Similar shows</h4>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="leftarrow arrowbtn bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="rightarrow arrowbtn bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    <div class="Now_playing_movies_div Now_playing_movies_div_movieDetail Similar_movies_div">
+                    </div>
+                </section>
+                <section
+                    class=" Now_playing_movies_container Now_playing_movies_container_movieDetail reccomendation movie "
+                    id="recommenn">
+                    <h4 class="Now_playing_movies_container_title">Recommendation</h4>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="leftarrow arrowbtn bi-chevron-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="rightarrow arrowbtn bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    <div
+                        class="Now_playing_movies_div Now_playing_movies_div_movieDetail recommendation_movies_div reccomendation_tvshow">
+                    </div>
+                </section>
+            </section>
+        </section>
+
+    </main>
+<script>
+var frames = document.getElementsByTagName('iframe');
+for (var frame of frames) {
+    frame.setAttribute('sandbox', 'allow-modals');
+    frame.setAttribute('sandbox', 'allow-orientation-lock');
+    frame.setAttribute('sandbox', 'allow-pointer-lock');
+    frame.setAttribute('sandbox', 'allow-presentation');
+    frame.setAttribute('sandbox', 'allow-scripts');
+    frame.setAttribute('sandbox', 'allow-top-navigation');
+    frame.setAttribute('sandbox', 'allow-forms');
+    frame.setAttribute('sandbox', 'allow-same-origin');
+}
+
+window.onload = function(){
+    var button = document.getElementsByName("sandbox")[0]
+    var iframe = document.getElementsByName("framez")[0]
+    button.addEventListener('click',sndbx,false);
+
+    function sndbx(){
+    var nibba = document.getElementById("framez").src;
+    if(iframe.sandbox == 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation'){
+    document.getElementById("framez").removeAttribute("sandbox"); 
+    }
+    frames['framez'].location.href=nibba;
+    iframe.sandbox = 'allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation';
+    }
+}
+</script>
+    <script>
+        const apiKey = 'cbcdfc6593aae506b023e64d7df48dc7'; // Your TMDB API key
+        const urlParams = new URLSearchParams(window.location.search);
+        const tvShowId = urlParams.get('id');
+        const imageBaseUrl = 'https://image.tmdb.org/t/p/w500'; // Base URL for images
+        const noImageUrl = 'https://example.com/noImage.png'; // Replace with your "no image" placeholder URL
+
+        async function fetchTVShowDetails() {
+            try {
+                const seasonsResponse = await fetch(`https://api.themoviedb.org/3/tv/${tvShowId}?api_key=${apiKey}&language=en-US`);
+                const seasonsData = await seasonsResponse.json();
+
+                const seasonsContainer = document.getElementById('season-slider');
+                const episodesContainer = document.getElementById('episode-slider');
+
+                for (let season of seasonsData.seasons) {
+                    // Create a separate div for each season
+                    const seasonDiv = document.createElement('div');
+                    seasonDiv.className = 'season';
+
+                    // Create a clickable header for each season
+                    const seasonHeader = document.createElement('div');
+                    seasonHeader.className = 'season-header';
+                    seasonHeader.textContent = `Season #${season.season_number}`;
+                    seasonDiv.appendChild(seasonHeader);
+                    seasonsContainer.appendChild(seasonDiv);
+
+                    // Fetch episodes for each season
+                    const episodesResponse = await fetch(`https://api.themoviedb.org/3/tv/${tvShowId}/season/${season.season_number}?api_key=${apiKey}&language=en-US`);
+                    const episodesData = await episodesResponse.json();
+
+                    // Add click event to the season header to show episodes
+                    seasonHeader.addEventListener('click', () => {
+                        episodesContainer.innerHTML = ''; // Clear previous episodes
+                        episodesContainer.style.display = 'flex'; // Show episode slider
+
+                        for (let episode of episodesData.episodes) {
+                            const episodeDiv = document.createElement('div');
+                            episodeDiv.className = 'episode';
+
+                            // Set the background image for the episode button
+                            const episodeButton = document.createElement('button');
+                            episodeButton.className = 'episode';
+                            episodeButton.textContent = `Ep${episode.episode_number} • ${episode.name}`;
+                            episodeButton.style.backgroundImage = episode.still_path ? `url(${imageBaseUrl}${episode.still_path})` : `url(${noImageUrl})`;
+                            episodeButton.style.backgroundSize = 'cover'; // Cover the button area
+                            episodeButton.style.color = 'white'; // Text color for better visibility
+
+                            // Add click event to load video in iframe
+                            episodeButton.onclick = () => {
+                                const iframeSrc = `https://freembed.site/embed/tv/?id=${tvShowId}&season=${season.season_number}&episode=${episode.episode_number}`;
+                                document.getElementById('YouTube-Iframe').src = iframeSrc;
+                                document.getElementById('video-caption').textContent = `${seasonsData.name} • S${season.season_number}, Ep${episode.episode_number}`;
+                            };
+
+                            // Append episode div to the episode slider
+                            episodesContainer.appendChild(episodeButton);
+                        }
+
+                        // Automatically click on the first episode if it exists
+                        if (episodesData.episodes.length > 0) {
+                            const firstEpisodeButton = episodesContainer.querySelector('.episode');
+                            firstEpisodeButton.click(); // Trigger the click event to load the video
+                        }
+                    });
+                }
+
+                // Automatically trigger Season 2's episode if available
+                if (seasonsData.seasons.length > 1) { // Check if there is at least Season 2
+                    const secondSeasonHeader = seasonsContainer.querySelectorAll('.season-header')[1]; // Get the second season
+                    secondSeasonHeader.click(); // Open Season 2's episode list
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        // Fetch TV show details on page load
+        fetchTVShowDetails();
+    </script>
+    <script src="./TvShowsDetails.js"></script>
+    <script src="share/share.js"></script>
+<script src='https://assets.codepen.io/191814/lazysizes-v5.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script  src="./movieServer.js"></script>
+</body>
+</html>
